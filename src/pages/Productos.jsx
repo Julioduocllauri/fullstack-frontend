@@ -5,7 +5,7 @@ import '../styles/pages/Productos.css';
 import { productosAPI } from '../data/api';
 
 function Productos() {
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(2000000); // Precio más alto por defecto
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,6 +16,8 @@ function Productos() {
       try {
         setLoading(true);
         const productosAPI_data = await productosAPI.getAll();
+        console.log('🔍 Datos recibidos del backend:', productosAPI_data);
+        console.log('🔍 Tipo de datos:', typeof productosAPI_data, Array.isArray(productosAPI_data));
         setProductos(productosAPI_data);
         setError(null);
       } catch (err) {
