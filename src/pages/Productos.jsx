@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Spinner, Alert } from 'react-bootstrap';
 import ProductCard from '../components/molecules/ProductCard';
 import '../styles/pages/Productos.css';
+// Import API service from components directory
 import { productosAPI } from '../components/api';
 
 function Productos() {
