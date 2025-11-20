@@ -17,8 +17,17 @@ function Productos() {
         setLoading(true);
         const productosAPI_data = await productosAPI.getAll();
         console.log('🔍 Datos recibidos del backend:', productosAPI_data);
-        console.log('🔍 Tipo de datos:', typeof productosAPI_data, Array.isArray(productosAPI_data));
-        setProductos(productosAPI_data);
+        // Mapear los productos del backend al formato del frontend
+        const productosMapeados = productosAPI_data.map(producto => ({
+          id: producto.id,
+          name: producto.nombre || producto.nombre_producto || producto.name,
+          price: producto.precio || producto.price,
+          description: producto.descripcion || producto.descripcion_producto || producto.description,
+          image: producto.url || producto.imagen || producto.image, // Usa url si es imagen, si no imagen
+          category: producto.categoria || producto.category,
+          link: producto.url || producto.link // Usa url si es link de compra
+        }));
+        setProductos(productosMapeados);
         setError(null);
       } catch (err) {
         console.error('Error al cargar productos:', err);
@@ -41,7 +50,7 @@ function Productos() {
   };
 
   const filteredProducts = productos.filter(product => 
-    (product.precio || product.price) <= maxPrice
+    (product.price || 0) <= maxPrice
   );
 
   if (loading) {
