@@ -3,6 +3,8 @@
 // Para producción en Render será configurado en las variables de entorno de Vercel
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://your-backend-name.onrender.com/api';
 
+console.log('🔗 API Base URL:', API_BASE_URL);
+
 // Clase para manejar las peticiones a la API de productos
 class ProductosAPI {
   constructor(baseURL = API_BASE_URL) {
