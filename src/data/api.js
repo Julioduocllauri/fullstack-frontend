@@ -1,5 +1,5 @@
 // Configuración de la API - Conectado con backend Java Spring Boot en Render
-const API_BASE_URL = 'https://queledoy-backend-7gjz.onrender.com/api';
+const API_BASE_URL = 'https://queledoy-backend-7gjz.onrender.com/api/v1';
 
 console.log('🔗 API Base URL conectada con Render:', API_BASE_URL);
 
