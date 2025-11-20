@@ -1,7 +1,7 @@
 // Configuración de la API
 // Para desarrollo local usar: http://localhost:3000/api
 // Para producción en Render será configurado en las variables de entorno de Vercel
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://your-backend-name.onrender.com/api';
+const API_BASE_URL = 'https://api-placeholder.herokuapp.com/api';
 
 console.log('🔗 API Base URL:', API_BASE_URL);
 
