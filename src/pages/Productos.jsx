@@ -20,10 +20,11 @@ function Productos() {
         setError(null);
       } catch (err) {
         console.error('Error al cargar productos:', err);
-        setError('Error al cargar los productos. Usando datos de ejemplo.');
+        console.log('🔄 Cargando datos de ejemplo mientras se configura el backend...');
         // Fallback a datos estáticos si falla la API
         const { products } = await import('../data/products.js');
         setProductos(products);
+        setError(null); // No mostrar error, usar datos de ejemplo silenciosamente
       } finally {
         setLoading(false);
       }
