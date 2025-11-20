@@ -1,9 +1,7 @@
-// Configuración de la API
-// Para desarrollo local usar: http://localhost:3000/api
-// Para producción en Render será configurado en las variables de entorno de Vercel
-const API_BASE_URL = 'https://api-placeholder.herokuapp.com/api';
+// Configuración de la API - Conectado con backend Java Spring Boot en Render
+const API_BASE_URL = 'https://queledoy-backend-7gjz.onrender.com/api';
 
-console.log('🔗 API Base URL:', API_BASE_URL);
+console.log('🔗 API Base URL conectada con Render:', API_BASE_URL);
 
 // Clase para manejar las peticiones a la API de productos
 class ProductosAPI {
@@ -13,16 +11,23 @@ class ProductosAPI {
 
   async getAll() {
     try {
-      const response = await fetch(`${this.baseURL}/productos`);
+      const response = await fetch(`${this.baseURL}/productos`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      });
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
       const data = await response.json();
+      console.log('✅ Productos cargados desde backend:', data);
       return data;
     } catch (error) {
-      console.error('Error en ProductosAPI.getAll():', error);
+      console.error('❌ Error en ProductosAPI.getAll():', error);
       throw error;
     }
   }
