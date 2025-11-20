@@ -1,16 +1,55 @@
-# React + Vite
+# 🚀 Fullstack Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación React desarrollada con Vite, diseñada para ser desplegada en Vercel y conectada con un backend en Render.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 18** - Librería de interfaz de usuario
+- **Vite** - Herramienta de build rápida
+- **React Router** - Navegación entre páginas
+- **React Bootstrap** - Componentes UI
+- **React Hook Form** - Manejo de formularios
 
-## React Compiler
+## 🚀 Despliegue en Vercel
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este repositorio está configurado para ser desplegado automáticamente en Vercel:
 
-## Expanding the ESLint configuration
+1. **Conectar repositorio** desde GitHub a Vercel
+2. **Configurar variables de entorno** en Vercel Dashboard:
+   ```
+   VITE_API_URL=https://your-backend-name.onrender.com/api
+   ```
+3. **Deploy automático**: Cada push a `main` despliega automáticamente
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔗 Conexión con Backend en Render
+
+Cuando tengas tu backend listo en Render:
+
+1. Actualiza `VITE_API_URL` en las variables de entorno de Vercel
+2. El frontend se conectará automáticamente al backend
+
+## 🔧 Desarrollo Local
+
+```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
+npm run dev
+
+# Construir para producción
+npm run build
+```
+
+## 📱 Páginas Disponibles
+
+- **Home** (`/`) - Página principal con productos destacados
+- **Productos** (`/productos`) - Catálogo completo con filtros
+- **Nosotros** (`/nosotros`) - Información de la empresa
+- **Contactos** (`/contactos`) - Formulario de contacto
+- **Iniciar Sesión** (`/iniciar-sesion`) - Login de usuarios
+- **Registrarse** (`/registrarse`) - Registro de nuevos usuarios
+
+---
+
+**Listo para conectar con tu backend en Render 🚀**
