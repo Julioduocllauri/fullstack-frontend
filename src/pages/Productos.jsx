@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Spinner, Alert } from 'react-bootstrap';
 import ProductCard from '../components/molecules/ProductCard';
 import '../styles/pages/Productos.css';
-import { productosAPI } from '../services/api';
+import { productosAPI } from '../components/api';
 
 function Productos() {
   const [maxPrice, setMaxPrice] = useState(1000);
