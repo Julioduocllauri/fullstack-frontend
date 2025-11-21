@@ -20,10 +20,10 @@ function Productos() {
         // Mapear los productos del backend al formato del frontend
         const productosMapeados = productosAPI_data.map(producto => ({
           id: producto.id,
-          name: producto.nombre_producto,
+          name: producto.nombre || producto.nombre_producto,
           price: producto.precio,
-          description: producto.descripcion_producto,
-          url_producto: producto.url_producto, // imagen
+          description: producto.descripcion || producto.descripcion_producto,
+          url_producto: producto.url, // imagen
           link_mercado: producto.link_mercado, // link
           category: producto.categoria
         }));
