@@ -23,8 +23,8 @@ function Productos() {
           name: producto.nombre || producto.nombre_producto,
           price: producto.precio,
           description: producto.descripcion || producto.descripcion_producto,
-          url_producto: producto.url, // imagen
-          link_mercado: producto.link_mercado, // link
+          image: producto.url, // imagen
+          link: producto.link_mercado, // link
           category: producto.categoria
         }));
         setProductos(productosMapeados);
