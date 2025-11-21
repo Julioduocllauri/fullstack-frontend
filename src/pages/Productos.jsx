@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Spinner, Alert } from 'react-bootstrap';
-import ProductCard from '../components/molecules/ProductCard';
+import ProductCard from '../components/molecules/ProductCard.jsx';
 import '../styles/pages/Productos.css';
-import { productosAPI } from '../data/api';
+import { productosAPI } from '../data/api.js';
 
 function Productos() {
   const [maxPrice, setMaxPrice] = useState(2000000); // Precio más alto por defecto
