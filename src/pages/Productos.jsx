@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Spinner, Alert } from 'react-bootstrap';
-import ProductCard from '../components/molecules/ProductCard.jsx';
+import ProductCard from '../components/molecules/ProductCard';
 import '../styles/pages/Productos.css';
-import { productosAPI } from '../data/api.js';
+import { productosAPI } from '../data/api';
 
 function Productos() {
   const [maxPrice, setMaxPrice] = useState(2000000); // Precio más alto por defecto
@@ -23,9 +23,9 @@ function Productos() {
           name: producto.nombre_producto,
           price: producto.precio,
           description: producto.descripcion_producto,
-          image: producto.url_imagen,
-          category: producto.categoria,
-          link: producto.link_mercado
+          url_producto: producto.url_producto, // imagen
+          link_mercado: producto.link_mercado, // link
+          category: producto.categoria
         }));
         setProductos(productosMapeados);
         setError(null);
