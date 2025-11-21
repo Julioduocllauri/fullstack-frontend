@@ -20,12 +20,12 @@ function Productos() {
         // Mapear los productos del backend al formato del frontend
         const productosMapeados = productosAPI_data.map(producto => ({
           id: producto.id,
-          name: producto.nombre || producto.nombre_producto || producto.name,
-          price: producto.precio || producto.price,
-          description: producto.descripcion || producto.descripcion_producto || producto.description,
-          image: producto.url || producto.imagen || producto.image, // Usa url si es imagen, si no imagen
-          category: producto.categoria || producto.category,
-          link: producto.url || producto.link // Usa url si es link de compra
+          name: producto.nombre_producto,
+          price: producto.precio,
+          description: producto.descripcion_producto,
+          image: producto.url_imagen,
+          category: producto.categoria,
+          link: producto.link_mercado
         }));
         setProductos(productosMapeados);
         setError(null);
@@ -73,7 +73,7 @@ function Productos() {
         
         {error && (
           <Alert variant="warning" className="mb-4">
-            <Alert.Heading>⚠️ Aviso</Alert.Heading>
+            <Alert.Heading>Aviso</Alert.Heading>
             {error}
           </Alert>
         )}
