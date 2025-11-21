@@ -6,11 +6,11 @@ const ProductCard = ({ product }) => {
   // Compatibilidad entre datos del backend y datos estáticos
   const productData = {
     id: product.id,
-    name: product.nombre || product.name,
-    description: product.descripcion || product.description,
+    name: product.nombre || product.name || product.nombre_producto,
+    description: product.descripcion || product.description || product.descripcion_producto,
     price: product.precio || product.price,
-    image: product.url || product.image || '/placeholder-image.jpg',
-    link: product.link || '#'
+    image: product.url_producto || product.url_imagen || product.url || product.image || '/placeholder-image.jpg',
+    link: product.link_mercado || product.link || '#'
   };
 
   return (
